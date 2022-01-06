@@ -1,0 +1,16 @@
+/*
+=============== 
+Links
+===============
+*/
+.link {
+  color:$body-color;
+  text-decoration: transparent;
+
+  transition: text-decoration .4s ease;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+
+}

@@ -1,5 +1,19 @@
 @import './base/settings';
-@import './base/base';
+@import './base/root';
+@import './base/dark';
 
-// Components
+/*
+=============== 
+Component
+===============
+*/
+@import './component/buttons';
+@import './component/links';
 
+
+/*
+=============== 
+Layout
+===============
+*/
+@import './layout/auth';
