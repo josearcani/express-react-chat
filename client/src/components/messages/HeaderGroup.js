@@ -5,9 +5,19 @@ export const HeaderGroup = () => {
     <div className="chat-area__header-group">
       <h2>College group</h2>
       <div className="chat-area__group-members">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
+        <figure>
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png"
+            alt=""
+          />
+        </figure>
+        <span>+3</span>
       </div>
     </div>
   )

@@ -17,6 +17,7 @@ ChatArea
     padding: 20px;
     align-items: center;
     justify-content: space-between;
+    background: $chat-header-bg;
   }
 
   & .chat-area__main {
@@ -29,7 +30,26 @@ ChatArea
 HeaderGroup
 ===============
 */
+.chat-area__header-group {
+  & h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
 
+.chat-area__group-members {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 32px;
+  }
+  & span {
+    background-color: $theme-color;
+    border-radius: 50%;
+    color: #fff;
+    padding: 6px;
+  }
+}
 
 /*
 =============== 
