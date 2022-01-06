@@ -9,6 +9,8 @@ Component
 */
 @import './component/buttons';
 @import './component/links';
+@import './component/header';
+@import './component/input';
 
 
 /*
@@ -17,3 +19,4 @@ Layout
 ===============
 */
 @import './layout/auth';
+@import './layout/chat';

@@ -1,0 +1,72 @@
+/*
+=============== 
+Chat header
+===============
+*/
+.header {
+  align-items: center;
+  border-bottom: 1px solid $body-color;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.header__logo {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 40px;
+  & svg {
+    color: $theme-color;
+  }
+}
+
+.header__search-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  width:100%;
+  & .header__search-input {
+    border: none;
+    background: lighten($color: $body-bg-color, $amount: 5);
+    background-image: url('../../assets/lupa.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    background-size: 16px;
+    padding-left: 30px;
+    padding-right: 0px;
+    position: relative;
+
+    transition: all .3s ease;
+
+    &:focus {
+      background-image: none;
+      outline: none;
+      padding-left: 8px;
+    }
+  }
+}
+
+.header__user-settings-container {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  & > * + * {
+    margin-left: 14px;
+  }
+}
+
+.header__setting-icon {
+  cursor: pointer;
+  width: 25px;
+
+}
+
+.header__user-img {
+  cursor: pointer;
+  width: 35px;
+  & img {
+    border-radius: 50%;
+  }
+}

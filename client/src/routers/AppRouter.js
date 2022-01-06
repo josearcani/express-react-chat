@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Routes, Switch, Route, Redirect } from 'react-router-dom';
-import { Header } from '../components/chat/Header';
+import { ChatScreen } from '../components/chat/ChatScreen';
 import { AuthRouter } from './AuthRouter';
 
 export const AppRouter = () => {
@@ -9,7 +9,7 @@ export const AppRouter = () => {
       <div>
         <Switch>
           <Route path="/auth" component={ AuthRouter } />
-          <Route exact path="/" component={ Header } />
+          <Route exact path="/" component={ ChatScreen } />
           <Redirect to="/auth/login" />
         </Switch>
       </div>
