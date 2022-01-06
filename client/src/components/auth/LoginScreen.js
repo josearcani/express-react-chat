@@ -20,7 +20,7 @@ export const LoginScreen = () => {
             className="auth__input"
             name="email"
           />
-          <i className="fa fa-user"></i>
+          <i className="fa fa-envelope"></i>
         </div>
         <div className="auth__input-container">
           <input
