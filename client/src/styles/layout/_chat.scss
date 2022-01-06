@@ -1,9 +1,18 @@
+.chat-app {
+  display: flex;
+  flex-direction: column;
+  background-color: $theme-bg-color;
+  height: 100vh;
+  // margin: 0 auto;
+  // overflow: hidden;
+}
 
 .chat__container {
   display: flex;
-  background-color: $theme-bg-color;
+  width: 100%;
+  overflow: hidden;
+  flex-grow: 1;
 }
-
 
 /*
 =============== 
@@ -92,3 +101,16 @@ ChatEntry
   }
 
 }
+
+/*
+delete this classes later...
+========
+*/
+.chat__sidebar,
+.chat__details {
+  display: none;
+}
+/*
+========
+*/
+

@@ -6,13 +6,13 @@ import { Sidebar } from './Sidebar';
 
 export const ChatScreen = () => {
   return (
-    <>
+    <div className="chat-app">
       <Header />
       <main className="chat__container">
         <Sidebar />
         <ChatArea />
         <ChatDetails />
       </main>
-    </>
+    </div>
   )
 }

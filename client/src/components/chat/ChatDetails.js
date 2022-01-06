@@ -2,8 +2,8 @@ import React from 'react';
 
 export const ChatDetails = () => {
   return (
-    <div>
-      chat details
+    <div className="chat__details">
+      !!!!!!chat details of chatt
     </div>
   )
 }

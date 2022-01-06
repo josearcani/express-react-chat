@@ -1,0 +1,78 @@
+/*
+=============== 
+ChatArea
+===============
+*/
+.chat-area__container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: 100%;
+  & .chat-area__header-group {
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .chat-area__main {
+    flex-grow: 1;
+  }
+}
+
+/*
+=============== 
+HeaderGroup
+===============
+*/
+
+
+/*
+=============== 
+MessageChat
+===============
+*/
+
+
+/*
+=============== 
+InputChat
+===============
+*/
+.chat-area__input {
+  display: flex;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  background-color: $theme-bg-color;
+  border-top: 1px solid $border-color;
+}
+
+.chat-input__input {
+  border: none;
+  background-color: $input-bg;
+  font-size: 15px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.chat-input__icons {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  & svg {
+    width: 20px;
+    height: 20px;
+    color: $settings-icon-color;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  & > * + * {
+    margin-left: 12px;
+  }
+}
