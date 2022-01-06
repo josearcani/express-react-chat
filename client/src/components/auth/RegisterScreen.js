@@ -12,7 +12,7 @@ export const RegisterScreen = () => {
             type="text"
             placeholder="name"
             autoComplete="off"
-            className="auth__input"
+            className="auth__input input"
             name="name"
           />
           <i className="fa fa-user"></i>
@@ -22,7 +22,7 @@ export const RegisterScreen = () => {
             type="email"
             placeholder="email"
             autoComplete="off"
-            className="auth__input"
+            className="auth__input input"
             name="email"
           />
           <i className="fa fa-envelope"></i>
@@ -32,7 +32,7 @@ export const RegisterScreen = () => {
             type="password"
             placeholder="password"
             autoComplete="off"
-            className="auth__input"
+            className="auth__input input"
             name="password"
             />
           <i className="fa fa-key"></i>
@@ -42,7 +42,7 @@ export const RegisterScreen = () => {
             type="password"
             placeholder="repeat password"
             autoComplete="off"
-            className="auth__input"
+            className="auth__input input"
             name="password2"
             />
           <i className="fa fa-key"></i>

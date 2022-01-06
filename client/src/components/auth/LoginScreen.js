@@ -17,7 +17,7 @@ export const LoginScreen = () => {
             type="email"
             placeholder="email"
             autoComplete="off"
-            className="auth__input"
+            className="auth__input input"
             name="email"
           />
           <i className="fa fa-envelope"></i>
@@ -27,7 +27,7 @@ export const LoginScreen = () => {
             type="password"
             placeholder="password"
             autoComplete="off"
-            className="auth__input"
+            className="auth__input input"
             name="password"
             />
           <i className="fa fa-key"></i>
