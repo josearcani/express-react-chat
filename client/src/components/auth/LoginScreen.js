@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// https://codepen.io/boudra/pen/YXzLBN
-// https://www.lullabot.com/articles/bem-atomic-design-a-css-architecture-worth-loving
-//https://github.com/john-smilga/javascript-basic-projects/blob/master/04-navbar/final/styles.css
-//https://codepen.io/TurkAysenur/pen/ZEbXoRZ?editors=1000
-//https://blog.logrocket.com/how-to-use-svgs-in-react/
 export const LoginScreen = () => {
   return (
     <>
