@@ -9,7 +9,11 @@ Input
   border-radius: 5px;
 
   &::placeholder {
-    color: $body-color;
+    color: $input-chat-color;
     letter-spacing: $spacing;
+  }
+
+  &:focus {
+    outline: none;
   }
 }

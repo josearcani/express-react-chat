@@ -46,6 +46,15 @@ svg {
   width: 100%;
 }
 
+figure {
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  & img {
+    border-radius: 50%;
+  }
+}
+
 h1,
 h2,
 h3,
