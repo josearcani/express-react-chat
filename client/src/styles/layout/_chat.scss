@@ -102,15 +102,33 @@ ChatEntry
 
 }
 
+
+.chat__sidebar,
+.chat__details-container {
+  flex-shrink: 0;
+  width: 340px;
+}
+
 /*
 delete this classes later...
 ========
-// */
+*/
 // .chat__sidebar,
-// .chat__details {
+// .chat-area__container {
 //   display: none;
 // }
 /*
 ========
 */
 
+@media (max-width: 1120px) {
+  .chat__details-container {
+  display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .chat__sidebar {
+    display: none;
+  }
+}

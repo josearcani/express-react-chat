@@ -1,0 +1,39 @@
+/*
+=============== 
+ChatDetails
+===============
+*/
+.chat__details-container {
+  width: 100%;
+}
+
+.chat-details__header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  & figure {
+    height: 60px;
+    margin-bottom: 15px;
+    width: 60px;
+  }
+  & h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  & p {
+    color: $msg-date;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.chat-details__change {
+  color: $detail-font-color;
+  display: flex;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+}
