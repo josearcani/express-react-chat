@@ -28,6 +28,14 @@ export const Header = () => {
             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png"
             alt="user icon"
           />
+          <div className="header__user-dropdown">
+            <button className="btn">
+              Profile
+            </button>
+            <button className="btn btn-primary">
+              Logout
+            </button>
+          </div>
         </figure>
       </div>
     </header>
