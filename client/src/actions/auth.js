@@ -9,3 +9,7 @@ export const login = (user) => ({
     uid: user.uid
   }
 })
+
+export const logout = () => ({
+  type: types.logout
+})
