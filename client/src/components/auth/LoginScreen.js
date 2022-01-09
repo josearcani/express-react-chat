@@ -37,6 +37,7 @@ export const LoginScreen = () => {
       .then((response) => {
         // console.log(response.data.user)
         dispatch(login(response.data.user))
+        localStorage.setItem('token', JSON.stringify(response.data.token))
       })
       .catch((error) => console.log(error))
     }
