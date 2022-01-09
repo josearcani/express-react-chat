@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { ReactComponent as Dark } from '../../assets/dark-theme.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 
 export const Header = () => {
+  const [toggle, setToggle] = useState(false);
+  
   return (
     <header className="header">
       <div className="header__logo">
@@ -23,19 +25,26 @@ export const Header = () => {
         <div className="header__setting-icon">
           <Settings />
         </div>
-        <figure className="header__user-img">
+        <figure
+          className="header__user-img"
+          onClick={ () => setToggle(!toggle) }
+        >
           <img
             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png"
             alt="user icon"
           />
-          <div className="header__user-dropdown">
-            <button className="btn">
-              Profile
-            </button>
-            <button className="btn btn-primary">
-              Logout
-            </button>
-          </div>
+          {
+            toggle && (
+              <div className="header__user-dropdown">
+                <button className="btn">
+                  Profile
+                </button>
+                <button className="btn btn-primary">
+                  Logout
+                </button>
+              </div>
+            )
+          }
         </figure>
       </div>
     </header>
