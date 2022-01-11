@@ -4,17 +4,19 @@ export const fetchWithoutToken = async (endpoint, data, method = 'GET') => {
   const url = `${baseUrl}/${endpoint}`;
 
   if (method === 'GET') {
-    const resp = await fetch(url);
-    return await resp.json();
+    return fetch(url)
+      .then(res => res.json())
+      .catch(error => error.msg)
   } else {
-    const resp = await fetch(url, {
-      method,
+    return fetch(url, {
+      method: 'POST',
       headers: {
         'Content-type': 'application/json'
       },
       body: JSON.stringify(data)
     })
-    return await resp.json();
+      .then(res => res.json())
+      .catch(error => error.msg);
   }
 }
 
@@ -23,14 +25,16 @@ export const fetchWithToken = async (endpoint, data, method = 'GET') => {
   const token = localStorage.getItem('token') || '';
 
   if (method === 'GET') {
-    const resp = await fetch(url, {
+    return fetch(url, {
       headers: {
         'x-token': token
       }
-    });
-    return await resp.json();
+    })
+    .then(res => res.json())
+    .catch(error => error.msg);
+
   } else {
-    const resp = await fetch(url, {
+    return fetch(url, {
       method,
       headers: {
         'Content-type': 'application/json',
@@ -38,6 +42,7 @@ export const fetchWithToken = async (endpoint, data, method = 'GET') => {
       },
       body: JSON.stringify(data)
     })
-    return await resp.json();
+    .then(res => res.json())
+    .catch(error => error.msg);
   }
 }

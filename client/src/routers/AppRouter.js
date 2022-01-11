@@ -1,15 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BrowserRouter as Routes, Switch } from 'react-router-dom';
-import { ChatScreen } from '../components/chat/ChatScreen';
+
+import { AuthContext } from '../auth/AuthContext';
 import { AuthRouter } from './AuthRouter';
-import { PrivateRoute } from './PrivateRoute';
-import { AuthContext } from '../auth/authContext';
 import { PublicRoute } from './PublicRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { ChatScreen } from '../components/chat/ChatScreen';
+import { Spinner } from '../components/Spinner';
 
 export const AppRouter = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user, verifyToken } = useContext(AuthContext);
 
+  useEffect(() => {
+    verifyToken()
+  }, [verifyToken])
+
+  if ( user.checking ) {
+    return <Spinner />
+  }
+  
   return (
     <Routes>
       <div>
