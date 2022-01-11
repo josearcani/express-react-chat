@@ -1,9 +1,7 @@
-import axios from 'axios';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { login } from '../../actions/auth';
-import { AuthContext } from '../../auth/authContext';
+import { AuthContext } from '../../auth/AuthContext';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
@@ -30,16 +28,7 @@ export const LoginScreen = () => {
       password: 'secret',
     },
     onSubmit: () => {
-      axios.post('http://localhost:4000/api/auth/login',{
-        email: user.email,
-        password: user.password
-      })
-      .then((response) => {
-        // console.log(response.data.user)
-        dispatch(login(response.data.user))
-        localStorage.setItem('token', JSON.stringify(response.data.token))
-      })
-      .catch((error) => console.log(error))
+      dispatch({ type: 'LOGIN', email: user.email, password: user.password })
     }
   })
 

@@ -3,7 +3,7 @@ import { BrowserRouter as Routes, Switch } from 'react-router-dom';
 import { ChatScreen } from '../components/chat/ChatScreen';
 import { AuthRouter } from './AuthRouter';
 import { PrivateRoute } from './PrivateRoute';
-import { AuthContext } from '../auth/authContext';
+import { AuthContext } from '../auth/AuthContext';
 import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = () => {

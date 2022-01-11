@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { ReactComponent as Dark } from '../../assets/dark-theme.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
-import { AuthContext } from '../../auth/authContext';
+import { AuthContext } from '../../auth/AuthContext';
 import { logout } from '../../actions/auth';
 
 export const Header = () => {
