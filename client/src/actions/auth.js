@@ -1,5 +1,6 @@
 import { fetchWithoutToken } from "../helpers/fetch";
 import { types } from "../types/types";
+import Swal from 'sweetalert2';
 
 export const login = (user) => ({
   type: types.login,
@@ -19,7 +20,7 @@ export const asyncActionHandlers = {
       dispatch(login(user));
       return
     }
-    return console.log(msg);
+    return Swal.fire('Error', msg, 'error');
     
   },
   REGISTER: ({ dispatch }) => async ({ name, email, password }) => {
