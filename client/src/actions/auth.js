@@ -22,7 +22,14 @@ export const asyncActionHandlers = {
     return console.log(msg);
     
   },
-  REGISTER: ({ dispatch }) => async (action) => {
-
+  REGISTER: ({ dispatch }) => async ({ name, email, password }) => {
+    console.warn('For now you can use the test user provided');
+    // const { user, token , msg } = await fetchWithoutToken('register', { name, email, password}, 'POST')
+    // if (user) {
+    //   localStorage.setItem('token', token );
+    //   dispatch(login(user));
+    //   return
+    // }
+    // return console.log(msg);
   }
 };

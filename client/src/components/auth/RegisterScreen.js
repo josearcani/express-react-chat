@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { AuthContext } from '../../auth/AuthContext';
 import { useForm } from '../../hooks/useForm';
 
 export const RegisterScreen = () => {
+
+  const { dispatch } = useContext(AuthContext);
+
 
   const { data: user, handleChange, handleSubmit, errors } = useForm({
     validations: {
@@ -34,7 +38,9 @@ export const RegisterScreen = () => {
       email: 'test1@test.com',
       password: 'secret',
     },
-    onSubmit: () =>  <Redirect to="/auth/login" />
+    onSubmit: () => {
+      dispatch({ type: 'REGISTER', name: user.name, email: user.email, password: user.password })
+    }
   });
 
   return (
