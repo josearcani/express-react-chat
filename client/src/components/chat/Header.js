@@ -10,8 +10,8 @@ export const Header = () => {
   const { user , dispatch } = useContext(AuthContext);
   
   const handleLogout = () => {
-    dispatch(logout())
-    localStorage.setItem('token', '')
+    localStorage.removeItem('token');
+    dispatch(logout());
   }
 
   return (
