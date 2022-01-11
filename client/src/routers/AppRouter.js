@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { BrowserRouter as Routes, Switch } from 'react-router-dom';
-import { ChatScreen } from '../components/chat/ChatScreen';
-import { AuthRouter } from './AuthRouter';
-import { PrivateRoute } from './PrivateRoute';
+
 import { AuthContext } from '../auth/AuthContext';
+import { AuthRouter } from './AuthRouter';
 import { PublicRoute } from './PublicRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { ChatScreen } from '../components/chat/ChatScreen';
+import { Spinner } from '../components/Spinner';
 
 export const AppRouter = () => {
 
@@ -14,10 +16,9 @@ export const AppRouter = () => {
     verifyToken()
   }, [verifyToken])
 
-
   if ( user.checking ) {
-    return <h1>Espere por favor</h1>
-}
+    return <Spinner />
+  }
   
   return (
     <Routes>
