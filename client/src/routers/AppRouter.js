@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BrowserRouter as Routes, Switch } from 'react-router-dom';
 import { ChatScreen } from '../components/chat/ChatScreen';
 import { AuthRouter } from './AuthRouter';
@@ -8,8 +8,17 @@ import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user, verifyToken } = useContext(AuthContext);
 
+  useEffect(() => {
+    verifyToken()
+  }, [verifyToken])
+
+
+  if ( user.checking ) {
+    return <h1>Espere por favor</h1>
+}
+  
   return (
     <Routes>
       <div>
