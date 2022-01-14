@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { createContext } from 'react';
-import { AuthContext } from '../auth/authContext';
+import { AuthContext } from '../auth/AuthContext';
 import { useSocket } from '../hooks/useSocket'
 
 export const SocketContext = createContext();
@@ -8,19 +8,19 @@ export const SocketContext = createContext();
 export const SocketProvider = ({ children }) => {
 
   const { socket, online, connectSocket, disconnectSocket } = useSocket('http://localhost:4000');
-  const { auth } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    if (auth.logged) {
+    if (user.logged) {
       connectSocket();
     }
-  }, [auth, connectSocket]);
+  }, [user, connectSocket]);
 
   useEffect(() => {
-    if (!auth.logged) {
+    if (!user.logged) {
       disconnectSocket();
     }
-  }, [auth, disconnectSocket]);
+  }, [user, disconnectSocket]);
 
 
   return (

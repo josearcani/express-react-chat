@@ -11,7 +11,14 @@ class Server {
     this.app = express();
     this.port = process.env.PORT;
     this.server = require('http').createServer(this.app);
-    this.io = require('socket.io')(this.server);
+    this.io = require('socket.io')(this.server, {
+      cors: {
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ["x-token"],
+        credentials: true
+      }
+    });
 
     this.paths = {
       auth:       '/api/auth',

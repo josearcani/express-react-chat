@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import io from 'socket.io-client';
+import { io } from 'socket.io-client';
 
 export const useSocket = (serverPath) => {
 
@@ -10,11 +10,9 @@ export const useSocket = (serverPath) => {
 
     const token = localStorage.getItem('token');
 
-    const socketTemp = io.connect(serverPath, {
-      transports: ['websocket'],
-      autoConnect: true,
-      forceNew: true,
-      query: {
+    const socketTemp = io(serverPath, {
+      withCredentials: true,
+      extraHeaders: {
         'x-token': token
       }
     });
