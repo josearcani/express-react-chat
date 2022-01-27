@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const ChatEntry = () => {
+export const ChatEntry = ({ name, uid, online }) => {
   return (
-    <div className="chat__sidebar-entry online">
+    <div className={`chat__sidebar-entry ${ online && 'online'} `}>
       <figure>
         <img
           src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png"
@@ -10,9 +10,9 @@ export const ChatEntry = () => {
         />
       </figure>
       <div className="chat__entry-details">
-        <h3>Madison Jones</h3>
+        <h3>{ name }</h3>
         <div className="chat__entry-message">
-          <p>Whats upp, it is freeze</p>
+          <p>{ uid }</p>
           <span>20m</span>
         </div>
       </div>

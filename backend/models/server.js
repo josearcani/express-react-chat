@@ -45,8 +45,8 @@ class Server {
     // parse json
     this.app.use(express.json());
     // directorio público
-    this.app.use(express.static(path.join(__dirname, '../client/build')));
-    // this.app.use(express.static('public'));
+    // this.app.use(express.static(path.join(__dirname, '../client/build')));
+    this.app.use(express.static('public'));
 
     // archivos temporales para manejo de archivos
     this.app.use(fileUpload({

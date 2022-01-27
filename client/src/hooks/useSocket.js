@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 
 export const useSocket = (serverPath) => {
 
+
   const [ socket, setSocket ] = useState(null);
   const [ online, setOnline ] = useState(false);
 
@@ -10,7 +11,7 @@ export const useSocket = (serverPath) => {
 
     const token = localStorage.getItem('token');
 
-    const socketTemp = io.connect(serverPath, {
+    const socketTemp = io(serverPath, {
       transports: ['websocket'],
       autoConnect: true,
       forceNew: true,
@@ -18,6 +19,7 @@ export const useSocket = (serverPath) => {
         'x-token': token
       }
     });
+    // console.log(socketTemp);
     setSocket(socketTemp);
   }, [serverPath]);
 
@@ -37,6 +39,8 @@ export const useSocket = (serverPath) => {
   useEffect(() => {
     socket?.on('disconnect', () => setOnline(false));
   }, [socket])
+
+
 
   return {
     socket,
