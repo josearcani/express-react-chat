@@ -8,13 +8,14 @@ const chatMessages = new ChatMessages();
 const socketController = async (socket = new Socket(), io ) => {
 
   // const token = socket.handshake.headers['x-token']; // validate the token
-  const user = await checkJWT(socket.handshake.headers['x-token']);
+  const user = await checkJWT(socket.handshake.query['x-token']);
+  // console.log(user);
   if (!user) {
     return socket.disconnect();
   }
 
   // connect to an special room chat
-  socket.join(user.id);
+  socket.join(user._id);
 
   // send last messages to a new client
   socket.emit('receive-messages', chatMessages.last10)
